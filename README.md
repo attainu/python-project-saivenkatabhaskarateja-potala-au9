@@ -35,6 +35,7 @@ Whenever possible.
 https://drive.google.com/file/d/1hys8DUgYfPDreHqAlNGYjRb5p4uNDyHb/view?usp=sharing
 
 ### Screen shots
+<img src="./Images/Main_Interface.PNG">
 
 
 ### Steps to run the program
