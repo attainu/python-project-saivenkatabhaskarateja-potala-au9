@@ -34,6 +34,8 @@ Whenever possible.
 ### Demo Video
 https://drive.google.com/file/d/1hys8DUgYfPDreHqAlNGYjRb5p4uNDyHb/view?usp=sharing
 
+### Flow Chart
+<img src="./Images/Untitled Document.jpg">
 ### Screen shots
 <img src="./Images/Main_Interface.PNG">
 
