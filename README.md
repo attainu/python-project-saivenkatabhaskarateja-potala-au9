@@ -1,33 +1,42 @@
-Online-CAB-Booking-Platform Project by :Sai Venkata Bhaskara Teja.
+# Cab Booking System
+### Project Objective
+To design a CAB Booking Platform where Riders can book nearest
+Available Drivers. The Program should be extensible to add new features
+Whenever possible.
+### Build using
+1. Python 3.8 latest version python language. 
+2. Have imported Math and Time modules to perform various operations.
+3. Build and tested on windows 10
+### Prerequisites
+•	python 3.8 (Install this from the  official website https://www.python.org/)
+•	Basic knowledge of how to use command prompt
+### Product Features
+•       Registration and Identification of Rider , Driver , Admin Accounts
 
-Project Objective : 
-      To design a CAB Booking Platform where Riders can book nearest available Drivers. 
-      The Program should IS extensible to add new features whenever possible.
+•	Options available for Rider Account:
+        1)CAB Booking.
+	2)Updation of location.
+	3)History of rides.
+	4)Ending a Trip.
 	
-Tehcnologies Used:
-	I have used Python Programming language for building the platform. I used built in libraries such as Time for date,time and Math for performing mathematical operations.
-
-Main functionality of this Program:
-	Rider can Register and Login.
-	Rider can Book a CAB.
-	Rider can change his Location.
-	Rider can view his entire ride History.
-	Rider can End a Trip.
-	Driver can Register and Login
-	Driver can change his Availability.
-	Driver can change his location.
-
-Highlights of this Project:
-	When user wants to book a CAB this program will automatically search the first available nearest Driver within a Radius of 8km and assigns it.
-	Exception handling is taken care for all Possible Wrong Inputs.
-Additional Features:
-	Seperate Admin account Can be created by Admins where in they can view all the Ongoing Trips and all Registered Riders and Drivers.
+•	Options available for Driver Account:
+	1)Updation of CAB Availablity.
+	2)CAB Location Updation.
 	
+•	Options available for Admin Account:
+	1)Access to View all Current ongoing Rides.
+	2)Access to View all Registered Riders and Drivers Data.
 
-	
-	
+• 	When user wants to book a CAB this program will automatically search the first available nearest Driver within a Radius of 8km and assigns it.
+
+• 	Exception handling is done for all the User Inputs.
+
+### Demo Video
+https://drive.google.com/file/d/1hys8DUgYfPDreHqAlNGYjRb5p4uNDyHb/view?usp=sharing
+
+### Screen shots
 
 
-
-
-
+### Steps to run the program
+1.	Copy  “.py” to your desired location.
+2.	Execute the file from command prompt.
