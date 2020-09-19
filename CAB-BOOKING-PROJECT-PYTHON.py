@@ -16,6 +16,15 @@ def Master_Data_Rider(Customer_Name,Customer_ContactNO,Status,Cust_x_y_coordinat
 
 #Driver class
 class Driver():
+    """Construtor for Driver Class.
+       Args : 
+       Driver_Name
+       Driver_Contact_no
+       Driver_Current_x_y_coordinates : CAB Current Location
+       Vehicle_No
+       Vehicle_Model_Name
+       Driver_Status : status of availablity of the Driver.
+    """    
     def __init__(self,Driver_Name,Driver_Contact_no,Driver_Current_x_y_coordinates_in_ListFormat,Vehicle_no,Vehicle_Model_Name,Driver_Status):
         self.Driver_Name = Driver_Name
         self.Driver_Contact_no = Driver_Contact_no
@@ -26,7 +35,10 @@ class Driver():
         self.Driver_Trip_Status = False
         Master_Data_Driver(self.Driver_Name,self.Driver_Contact_no,self.Driver_x_y_coordinates,self.Driver_Status,self.Vehicle_no,self.Vehicle_Model_Name,self.Driver_Trip_Status)
     
-    #Driver account login interface
+    """
+    Driver account login in Page.
+    This Mehtod gives options to driver to change his status,update cabs location. 
+    """
     def Driver_Account_Login_Page(self):
         print(f"-----------------------------\nhi {self.Driver_Name}.Welcome to your account.Please find the account details below.\n-----------------------------\nName : {self.Driver_Name} \nContactNo : {self.Driver_Contact_no} \nVehicle No : {self.Vehicle_no}\nVehicle Model Name: {self.Vehicle_Model_Name}\nCab location : {self.Driver_x_y_coordinates}")
         if self.Driver_Status:
@@ -55,7 +67,10 @@ class Driver():
             self.Driver_Account_Login_Page()
         
         
-    #Method to change Driver availability.
+    """
+    This Method contains the code for Changing the Driver availability
+
+    """
     def Driver_Status_Updation(self):
             global Master_Driver
             if Master_Driver[self.Driver_Contact_no][6] == True:
@@ -79,7 +94,9 @@ class Driver():
                     print("Wrong input.Please try again")
                     self.Driver_Status_Updation()
 
-    #Method to change Driver Location 
+    """
+    This method contains the code to update CAB Location.
+    """ 
     def Driver_Location_Updation(self):
         if Master_Driver[self.Driver_Contact_no][6] == True:
                 print("----------------------------------------------------\nYou cannot update coordinates while your current trip is not ended.\n Please try after customer ends the trip\n----------------------------------------------------")
@@ -99,6 +116,19 @@ class Driver():
             self.Driver_Account_Login_Page()
 #Rider class
 class Rider(Driver):
+    """Construtor for Rider Class.
+       Args : 
+       Name
+       Contact_No
+       Rider Location Details
+       Trip_Details : Database for storing all Rider Trips.
+       Trip_ID : Unique Trip ID for each trip.
+       Search_Status : Stores the boolean value for any current avaiable driver for a booking. 
+       Cust_Status : Stores the boolean value that indicates whether customer is on any ongoing trip. 
+       Cur_Driver_Key : Stores the Driver key value for ongoing trip with customer.
+
+    """ 
+
     def __init__(self,Cust_name,Cust_Contact_no,Cust_x_y_coordinates):
         self.Cust_name = Cust_name
         self.Cust_Contact_no = Cust_Contact_no
@@ -110,7 +140,11 @@ class Rider(Driver):
         self.Cur_Driver_Key = None
         Master_Data_Rider(self.Cust_name,self.Cust_Contact_no,self.Cust_Status,self.Cust_x_y_coordinates)
 
-    #Rider account login interface
+    """
+    Rider account login interface
+    This method gives options to the rider to book a ride , update his location details,
+    ending his ongoing trip , vieweing the history off all his past rides. 
+    """
     def Rider_Account_Login_Page(self):
         print(f"----------------------------------------------------\nhi {self.Cust_name}.Welcome to your account.Please find the account details below.\n----------------------------------------------------")
         print(f"Name : {self.Cust_name}\nContact No : {self.Cust_Contact_no}\nYour current Position : {self.Cust_x_y_coordinates} ")
@@ -136,7 +170,7 @@ class Rider(Driver):
             print("Wrong input.Routing you back to your account page.")
             self.Rider_Account_Login_Page()
 
-    # Method to search the nearest available Rriver    
+    # Method to search the nearest available Rriver 
     def Availability_Search(self):
         global Master_Driver
         flag = 0
@@ -219,6 +253,11 @@ class Rider(Driver):
             self.Rider_Account_Login_Page()
 
 class Admin:
+    """
+    Constructor for Admin Class
+    Admin_Name
+    Admin_ContactNo
+    """
     def __init__(self,Admin_Name,Admin_ContactNo):
         self.Admin_Name = Admin_Name
         self.Admin_ContactNo = Admin_ContactNo
@@ -277,7 +316,9 @@ class Admin:
 
     
 
-#Function for Rider interface
+"""
+This functio will allow user to create an Rider account or login to his existing account.
+"""
 def Rider_Interface():
         print("-----------------------------\nWelcome to Rider Interface\n-----------------------------")
         New_Existing = input("Please enter [new] if you new user\nEnter [existing] to go to your existing account\nenter [exit] to go to main interface\n").upper()
@@ -331,7 +372,9 @@ def Rider_Interface():
             print("-----------------------------\nWrong input.You are routed back to Rider_Interface.Enter again.")
             Rider_Interface()
 
-#function for Driver Interface
+"""
+This functio will allow user to create an Driver account or login to his existing account.
+"""
 def Driver_Interface():
 
         print("-----------------------------\nWelcome to Driver Interface.\n-----------------------------") 
@@ -422,7 +465,10 @@ def Driver_Interface():
             print("-----------------------------\nWrong input.Enter again\n-----------------------------")
             Driver_Interface()
 
-#Function for Admin interface
+"""
+This function will allow the user to create Admin account or 
+login to his existing Admin account.
+"""
 
 def Admin_Interface():
     print("-----------------------------\nWelcome to Administrator Interface.\n-----------------------------") 
@@ -471,7 +517,11 @@ def Admin_Interface():
         Admin_Interface()
 
 
-#Function for main interface.
+""" This is the main Interface Function.
+    This interface gives user to identify whether he is a Rider or Driver or Admin. 
+    Based on user input it will route use to that respective interface.
+"""
+
 def Main_Interface():
     global Master_Driver_Users
     global Master_Rider_Users
