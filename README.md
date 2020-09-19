@@ -31,6 +31,8 @@ Whenever possible.
 
 • 	Exception handling is done for all the User Inputs.
 
+• 	When user wants to book a CAB this program will automatically search the first available nearest Driver within a Radius of 8km and assigns it.
+
 ### Demo Video
 https://drive.google.com/file/d/1hys8DUgYfPDreHqAlNGYjRb5p4uNDyHb/view?usp=sharing
 
